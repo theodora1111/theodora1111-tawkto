@@ -4,12 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Theodora Asistente IA</title>
-
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="Avatar Negro.png" />
 
   <style>
-    /* Tema día/noche */
     body.day {
       background-color: #ffffff;
       color: #000000;
@@ -19,7 +16,6 @@
       color: #ffffff;
     }
 
-    /* Transición suave al cargar */
     body {
       margin: 0;
       padding: 20px;
@@ -35,46 +31,38 @@
       opacity: 1;
     }
 
-    /* Animación mística de entrada */
     @keyframes despertar {
-      0% {
-        opacity: 0;
-        transform: scale(0.85);
-        filter: blur(4px);
-      }
-      100% {
-        opacity: 1;
-        transform: scale(1);
-        filter: blur(0);
-      }
+      0% { opacity: 0; transform: scale(0.9); filter: blur(4px); }
+      100% { opacity: 1; transform: scale(1); filter: blur(0); }
     }
 
-    /* Logo con animación y tamaño aumentado */
     .logo-container {
-      padding: 12px 24px;
-      margin-bottom: 15px;
-      border-radius: 10px;
-      display: inline-block;
+      padding: 14px;
+      border-radius: 12px;
+      transition: background-color 0.5s ease-in-out;
+    }
+
+    body.night .logo-container {
+      background-color: #ffffff;
     }
 
     .logo-container img {
-      width: 220px;  /* Logo más grande */
+      width: 220px;
       height: auto;
-      display: block;
-      transition: filter 0.5s ease-in-out;
       animation: despertar 2s ease-out;
       animation-delay: 0.3s;
       animation-fill-mode: both;
+      filter: invert(1);
+      transition: filter 0.5s ease-in-out;
     }
 
-    /* Inversión condicional para modo oscuro */
-    body.night .logo-container img {
-      filter: invert(1);
+    body.day .logo-container img {
+      filter: none;
     }
 
     h2 {
       font-size: 2rem;
-      margin: 0 0 10px;
+      margin: 15px 0 10px;
       text-align: center;
     }
 
@@ -82,11 +70,10 @@
       font-size: 1rem;
       max-width: 600px;
       text-align: center;
-      margin: 0 0 30px;
+      margin-bottom: 30px;
     }
 
     @media (max-width: 768px) {
-      body { padding: 15px; }
       .logo-container img { width: 140px; }
       h2 { font-size: 1.5rem; }
       p  { font-size: 0.9rem; }
@@ -99,7 +86,6 @@
       const isDay = hour >= 6 && hour < 18;
       document.body.classList.add(isDay ? 'day' : 'night');
 
-      // Transición de entrada
       setTimeout(() => {
         document.body.classList.add('loaded');
       }, 100);
@@ -108,12 +94,12 @@
 </head>
 <body>
   <div class="logo-container">
-    <img src="LOGO THEODORA NEGRO RIF.png" alt="Logo Theodora" />
+    <img src="LOGO-THEODORA-NEGRO.png" alt="Logo Theodora" />
   </div>
 
   <h2>Theodora Asistente IA</h2>
   <p>
-    Conoce nuestros productos, solicita recomendaciones de armonías gastronómicas y más. Pulsa abajo el botón de Chat o selecciona alguna de las preguntas rápidas.
+    Conoce nuestros productos, solicita recomendaciones de armonías gastronómicas y más. Pulsa abajo el botón de chat o selecciona alguna de las preguntas rápidas.
   </p>
 
   <!-- Chat Tawk.to -->
