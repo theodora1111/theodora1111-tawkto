@@ -1,24 +1,133 @@
-@keyframes despertar {
-  0% {
-    opacity: 0;
-    transform: scale(0.85);
-    filter: blur(4px);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-    filter: blur(0);
-  }
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Theodora Asistente IA</title>
 
-.logo-container img {
-  animation: despertar 2s ease-out;
-  animation-delay: 0.3s;
-  animation-fill-mode: both;
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="Avatar Negro.png" />
 
-  /* Ajuste de tamaño */
-  width: 220px;      /* Puedes subir esto a 240px, 300px o más si quieres más impacto */
-  height: auto;      /* Conserva la proporción */
-  display: block;    /* Permite centrar */
-  margin: 0 auto;    /* Centrado horizontal */
-}
+  <style>
+    /* Tema día/noche */
+    body.day {
+      background-color: #ffffff;
+      color: #000000;
+    }
+    body.night {
+      background-color: #000000;
+      color: #ffffff;
+    }
+
+    /* Transición suave al cargar */
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: background-color 0.5s, color 0.5s, opacity 1.2s ease-in-out;
+    }
+    body.loaded {
+      opacity: 1;
+    }
+
+    /* Animación mística de entrada */
+    @keyframes despertar {
+      0% {
+        opacity: 0;
+        transform: scale(0.85);
+        filter: blur(4px);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+      }
+    }
+
+    /* Logo con animación y tamaño aumentado */
+    .logo-container {
+      padding: 12px 24px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+
+    .logo-container img {
+      width: 220px;  /* Logo más grande */
+      height: auto;
+      display: block;
+      transition: filter 0.5s ease-in-out;
+      animation: despertar 2s ease-out;
+      animation-delay: 0.3s;
+      animation-fill-mode: both;
+    }
+
+    /* Inversión condicional para modo oscuro */
+    body.night .logo-container img {
+      filter: invert(1);
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin: 0 0 10px;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1rem;
+      max-width: 600px;
+      text-align: center;
+      margin: 0 0 30px;
+    }
+
+    @media (max-width: 768px) {
+      body { padding: 15px; }
+      .logo-container img { width: 140px; }
+      h2 { font-size: 1.5rem; }
+      p  { font-size: 0.9rem; }
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const hour = new Date().getHours();
+      const isDay = hour >= 6 && hour < 18;
+      document.body.classList.add(isDay ? 'day' : 'night');
+
+      // Transición de entrada
+      setTimeout(() => {
+        document.body.classList.add('loaded');
+      }, 100);
+    });
+  </script>
+</head>
+<body>
+  <div class="logo-container">
+    <img src="LOGO THEODORA NEGRO RIF.png" alt="Logo Theodora" />
+  </div>
+
+  <h2>Theodora Asistente IA</h2>
+  <p>
+    Conoce nuestros productos, solicita recomendaciones de armonías gastronómicas y más. Pulsa abajo el botón de Chat o selecciona alguna de las preguntas rápidas.
+  </p>
+
+  <!-- Chat Tawk.to -->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function(){
+      var s1 = document.createElement("script"),
+          s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/68850671ec9db219126f704b/1j13q2bih';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  </script>
+</body>
+</html>
