@@ -2,45 +2,31 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Theodora Chat</title>
-  <style>
-    body {
-      background-color: #fefcf6;
-      font-family: 'Georgia', serif;
-      color: #333;
-      padding: 20px;
-      max-width: 700px;
-      margin: auto;
-    }
-    h2 {
-      color: #b08f45;
-      text-align: center;
-    }
-    p {
-      text-align: center;
-      font-style: italic;
-      color: #7a6a3d;
-    }
-  </style>
+  <title>Chat en pantalla completa</title>
 </head>
 <body>
-  <h2>Asistente Theodora 11-11 🍷</h2>
-  <p>Conversaciones elegantes, respuestas que conectan con el alma.</p>
+  <h1>Bienvenido a Theodora 11-11 </h1>
+  <p>Espéralo... el chat se abrirá en segundos 💬</p>
 
-  <!-- Start of Tawk.to Script -->
+  <!-- Script principal de Tawk.to -->
   <script type="text/javascript">
     var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-    (function() {
-      var s1 = document.createElement("script"),
-          s0 = document.getElementsByTagName("script")[0];
+    (function(){
+      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
       s1.async = true;
       s1.src = 'https://embed.tawk.to/68850671ec9db219126f704b/1j13q2bih';
       s1.charset = 'UTF-8';
-      s1.setAttribute('crossorigin', '*');
+      s1.setAttribute('crossorigin','*');
       s0.parentNode.insertBefore(s1, s0);
     })();
   </script>
-  <!-- End of Tawk.to Script -->
 
+  <!-- Maximiza automáticamente el chat al cargar -->
+  <script type="text/javascript">
+    Tawk_API = Tawk_API || {};
+    Tawk_API.onLoad = function() {
+      Tawk_API.maximize();
+    };
+  </script>
 </body>
 </html>
