@@ -44,11 +44,9 @@
     }
 
     .logo-container img {
-      max-width: 260px;
-      height: auto;
-      display: block;
-      transition: filter 0.5s ease-in-out;
-    }
+  width: clamp(260px, 35vw, 340px);
+  height: auto;
+}
 
     body.night .logo-container img {
       filter: invert(1);
