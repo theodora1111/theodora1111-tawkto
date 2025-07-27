@@ -9,7 +9,6 @@
   <link rel="icon" type="image/png" href="Avatar Negro.png" />
 
   <style>
-    /* Tema claro/oscuro */
     body.day {
       background-color: #ffffff;
       color: #000000;
@@ -20,7 +19,6 @@
       color: #ffffff;
     }
 
-    /* Transición suave al cargar */
     body {
       margin: 0;
       padding: 20px;
@@ -38,15 +36,10 @@
     }
 
     .logo-container {
-      background-color: #ffffff;
+      background-color: transparent;
       padding: 12px 24px;
       border-radius: 10px;
-      display: inline-block;
       margin-bottom: 15px;
-    }
-
-    body.night .logo-container {
-      background-color: #000000;
     }
 
     .logo-container img {
@@ -78,12 +71,15 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Detecta hora y aplica tema
       const hour = new Date().getHours();
       const isDay = hour >= 6 && hour < 18;
       document.body.classList.add(isDay ? 'day' : 'night');
 
-      // Transición de entrada
+      // Logo según tema
+      const logo = document.getElementById('theodora-logo');
+      logo.src = isDay ? 'LOGO THEODORA NEGRO RIF.png' : 'LOGO THEODORA.png';
+
+      // Activar fade-in
       setTimeout(() => {
         document.body.classList.add('loaded');
       }, 100);
@@ -92,7 +88,7 @@
 </head>
 <body>
   <div class="logo-container">
-    <img src="LOGO THEODORA.png" alt="Logo Theodora" />
+    <img id="theodora-logo" src="" alt="Logo Theodora" />
   </div>
 
   <h2>Theodora Asistente IA</h2>
