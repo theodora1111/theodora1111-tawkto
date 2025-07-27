@@ -1,32 +1,80 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Chat en pantalla completa</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chat Mágico Theodora</title>
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    p {
+      font-size: 16px;
+      max-width: 600px;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    iframe {
+      width: 100%;
+      max-width: 400px;
+      height: 450px;
+      border: none;
+      border-radius: 10px;
+      margin-top: 20px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+    }
+
+    /* 🎯 Versión móvil */
+    @media (max-width: 768px) {
+      body {
+        padding: 15px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+
+      p {
+        font-size: 14px;
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+
+      iframe {
+        height: 400px;
+      }
+    }
+
+    /* ✨ Animación suave de entrada */
+    body {
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+  </style>
 </head>
 <body>
-  <h1>Bienvenido a Theodora 11-11 </h1>
-  <p>Espéralo... el chat se abrirá en segundos 💬</p>
-
-  <!-- Script principal de Tawk.to -->
-  <script type="text/javascript">
-    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-    (function(){
-      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-      s1.async = true;
-      s1.src = 'https://embed.tawk.to/68850671ec9db219126f704b/1j13q2bih';
-      s1.charset = 'UTF-8';
-      s1.setAttribute('crossorigin','*');
-      s0.parentNode.insertBefore(s1, s0);
-    })();
-  </script>
-
-  <!-- Maximiza automáticamente el chat al cargar -->
-  <script type="text/javascript">
-    Tawk_API = Tawk_API || {};
-    Tawk_API.onLoad = function() {
-      Tawk_API.maximize();
-    };
-  </script>
+  <h2>🪄 Theodora te escucha</h2>
+  <p>Conéctate con la energía del 11:11 y habla con tu guía intuitiva en tiempo real.</p>
+  <iframe src="https://chatbot-url.com" title="Chat intuitivo Theodora"></iframe>
 </body>
 </html>
