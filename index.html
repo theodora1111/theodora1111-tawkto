@@ -3,7 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chat Theodora</title>
+  <title>Theodora asistente IA</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="Avatar Negro.png" />
+
   <style>
     body {
       background-color: #0d0d0d;
@@ -15,6 +19,13 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    img {
+      max-width: 150px;
+      margin-bottom: 15px;
+      animation: fadeInLogo 1.2s ease-in;
     }
 
     h2 {
@@ -40,7 +51,6 @@
       box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
     }
 
-    /* 🎯 Versión móvil */
     @media (max-width: 768px) {
       body {
         padding: 15px;
@@ -59,22 +69,27 @@
       iframe {
         height: 400px;
       }
-    }
 
-    /* ✨ Animación suave de entrada */
-    body {
-      animation: fadeIn 1.5s ease-in;
+      img {
+        max-width: 120px;
+      }
     }
 
     @keyframes fadeIn {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInLogo {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
     }
   </style>
 </head>
 <body>
+  <img src="LOGO%20THEODORA.png" alt="Logo Theodora 11-11" />
   <h2>Theodora Asistente IA</h2>
   <p>Conoce nuestros productos, solicita recomendaciones de armonías gastronómicas y más.</p>
-  <iframe src="https://chatbot-url.com" title="Chat intuitivo Theodora"></iframe>
+  <iframe src="https://theodora1111.github.io/theodora1111-tawkto/" title="Chat intuitivo Theodora"></iframe>
 </body>
 </html>
