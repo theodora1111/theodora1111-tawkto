@@ -3,15 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Theodora asistente IA</title>
-
-  <!-- Favicon -->
+  <title>Theodora Asistente IA</title>
   <link rel="icon" type="image/png" href="Avatar Negro.png" />
 
   <style>
+    /* Tema diurno / nocturno */
+    body.day {
+      background-color: #ffffff;
+      color: #000000;
+    }
+    body.night {
+      background-color: #000000;
+      color: #ffffff;
+    }
+
     body {
-      background-color: #0d0d0d;
-      color: #fff;
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 20px;
@@ -19,63 +25,90 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      animation: fadeIn 1.5s ease-in;
+      animation: fadeIn 1.2s ease-in;
+      transition: background-color 0.5s, color 0.5s;
     }
 
-    img {
-      max-width: 150px;
+    /* Franja negra detrás del logo */
+    .logo-container {
+      background-color: #000000;
+      padding: 10px 20px;
+      display: inline-block;
       margin-bottom: 15px;
-      animation: fadeInLogo 1.2s ease-in;
+    }
+
+    .logo-container img {
+      display: block;
+      max-width: 180px;
+      height: auto;
+      animation: fadeInLogo 1s ease-in;
     }
 
     h2 {
-      font-size: 28px;
-      margin-bottom: 10px;
+      font-size: 2rem;
+      margin: 0 0 10px;
       text-align: center;
     }
 
     p {
-      font-size: 16px;
+      font-size: 1rem;
       max-width: 600px;
       text-align: center;
-      margin-bottom: 30px;
+      margin: 0 0 30px;
     }
 
     @media (max-width: 768px) {
       body { padding: 15px; }
-      img { max-width: 120px; }
-      h2 { font-size: 22px; }
-      p  { font-size: 14px; }
+      .logo-container img { max-width: 140px; }
+      h2 { font-size: 1.5rem; }
+      p  { font-size: 0.9rem; }
     }
 
     @keyframes fadeIn {
       from { opacity: 0; }
       to   { opacity: 1; }
     }
-
     @keyframes fadeInLogo {
       from { transform: scale(0.9); opacity: 0; }
       to   { transform: scale(1);   opacity: 1; }
     }
   </style>
+
+  <script>
+    // Al cargar, aplicamos tema según hora local
+    document.addEventListener('DOMContentLoaded', function() {
+      const hour = new Date().getHours();
+      const isDay = hour >= 6 && hour < 18; 
+      document.body.classList.add(isDay ? 'day' : 'night');
+    });
+  </script>
 </head>
 
 <body>
-  <img src="LOGO THEODORA.png" alt="Logo Theodora 11-11" />
+  <div class="logo-container">
+    <img src="LOGO THEODORA.png" alt="Logo Theodora" />
+  </div>
+
   <h2>Theodora Asistente IA</h2>
-  <p>Conoce nuestros productos, solicita recomendaciones de armonías gastronómicas y más.</p>
+
+  <p>
+    Conoce nuestros productos, solicita recomendaciones de armonías y mucho más.
+  </p>
 
   <!-- Tawk.to chat widget -->
   <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
     (function(){
-      var s1=document.createElement("script"), s0=document.getElementsByTagName("script")[0];
-      s1.async=true;
-      s1.src='https://embed.tawk.to/68850671ec9db219126f704b/1j13q2bih';
-      s1.charset='UTF-8';
-      s1.setAttribute('crossorigin','*');
+      var s1 = document.createElement("script"),
+          s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/68850671ec9db219126f704b/1j13q2bih';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
       s0.parentNode.insertBefore(s1, s0);
     })();
   </script>
+</body>
+</html>
 </body>
 </html>
