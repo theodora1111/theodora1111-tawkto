@@ -44,9 +44,9 @@
     }
 
     .logo-container img {
-  width: clamp(300px, 35vw, 340px);
-  height: auto;
-}
+      width: clamp(300px, 35vw, 340px);
+      height: auto;
+    }
 
     body.night .logo-container img {
       filter: invert(1);
@@ -66,10 +66,19 @@
     }
 
     @media (max-width: 768px) {
-      body { padding: 15px; }
-      .logo-container img { max-width: 200px; }
-      h2 { font-size: 1.5rem; }
-      p  { font-size: 0.9rem; }
+      body {
+        padding: 15px;
+      }
+      .logo-container img {
+        /* Override para móvil */
+        width: clamp(300px, 80vw, 340px);
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 0.9rem;
+      }
     }
   </style>
 
@@ -92,7 +101,8 @@
 
   <h2>Theodora Asistente IA</h2>
   <p>
-    Conoce nuestros productos, solicita recomendaciones de armonías gastronómicas y más. Pulsa abajo el botón de chat o selecciona alguna de las preguntas rápidas.
+    Conoce nuestros productos, solicita recomendaciones de armonías gastronómicas
+    y más. Pulsa abajo el botón de chat o selecciona alguna de las preguntas rápidas.
   </p>
 
   <!-- Chat Tawk.to -->
