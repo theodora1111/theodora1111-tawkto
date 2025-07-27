@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Theodora Asistente IA</title>
+
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="Avatar Negro.png" />
 
   <style>
@@ -11,6 +13,7 @@
       background-color: #ffffff;
       color: #000000;
     }
+
     body.night {
       background-color: #000000;
       color: #ffffff;
@@ -27,42 +30,32 @@
       opacity: 0;
       transition: background-color 0.5s, color 0.5s, opacity 1.2s ease-in-out;
     }
+
     body.loaded {
       opacity: 1;
     }
 
-    @keyframes despertar {
-      0% { opacity: 0; transform: scale(0.9); filter: blur(4px); }
-      100% { opacity: 1; transform: scale(1); filter: blur(0); }
-    }
-
     .logo-container {
-      padding: 14px;
-      border-radius: 12px;
-      transition: background-color 0.5s ease-in-out;
-    }
-
-    body.night .logo-container {
-      background-color: #ffffff;
+      padding: 12px 24px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      display: inline-block;
     }
 
     .logo-container img {
-      width: 220px;
+      max-width: 180px;
       height: auto;
-      animation: despertar 2s ease-out;
-      animation-delay: 0.3s;
-      animation-fill-mode: both;
-      filter: invert(1);
+      display: block;
       transition: filter 0.5s ease-in-out;
     }
 
-    body.day .logo-container img {
-      filter: none;
+    body.night .logo-container img {
+      filter: invert(1);
     }
 
     h2 {
       font-size: 2rem;
-      margin: 15px 0 10px;
+      margin: 0 0 10px;
       text-align: center;
     }
 
@@ -70,11 +63,12 @@
       font-size: 1rem;
       max-width: 600px;
       text-align: center;
-      margin-bottom: 30px;
+      margin: 0 0 30px;
     }
 
     @media (max-width: 768px) {
-      .logo-container img { width: 140px; }
+      body { padding: 15px; }
+      .logo-container img { max-width: 140px; }
       h2 { font-size: 1.5rem; }
       p  { font-size: 0.9rem; }
     }
@@ -94,13 +88,11 @@
 </head>
 <body>
   <div class="logo-container">
-    <img src="LOGO-THEODORA-NEGRO.png" alt="Logo Theodora" />
+    <img src="LOGO THEODORA NEGRO RIF.png" alt="Logo Theodora" />
   </div>
 
   <h2>Theodora Asistente IA</h2>
-  <p>
-    Conoce nuestros productos, solicita recomendaciones de armonías gastronómicas y más. Pulsa abajo el botón de chat o selecciona alguna de las preguntas rápidas.
-  </p>
+  <p>Conoce nuestros productos, solicita recomendaciones de armonías gastronómicas y más. Pulsa abajo el botón de chat o selecciona alguna de las preguntas rápidas.</p>
 
   <!-- Chat Tawk.to -->
   <script type="text/javascript">
